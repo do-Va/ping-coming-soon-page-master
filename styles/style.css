@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+  --clr-primary: hsl(0, 0%, 59%);
+  --clr-secondary: hsl(209, 33%, 12%);
+
+  --clr-error: hsl(354, 100%, 66%);
+
+  --clr-main-bg: hsl(0, 0%, 100%);
+  --clr-btn-bg: hsl(223, 87%, 63%);
+  --clr-img-bg: hsl(223, 100%, 88%);
+}
+
+/*=============================================
+=                Global Styles                =
+=============================================*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  background: var(--clr-main-bg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul {
+  list-style: none;
+}
+
+/*=====  End of Global Styles  ======*/
+.wrapper {
+  height: 100%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header > *:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.logo {
+  margin-top: 2em;
+  width: 3em;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 300;
+  color: var(--clr-primary);
+  margin-bottom: 1em;
+}
+
+.title span {
+  font-weight: 700;
+  color: var(--clr-secondary);
+}
+
+.text {
+  font-size: 0.65em;
+}
+
+.form {
+  width: 100%;
+  max-width: 700px;
+  padding-inline: 1em;
+}
+
+.input,
+.btn {
+  padding: 1em 2em;
+  border-radius: 50px;
+  border: none;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--clr-img-bg);
+  margin-bottom: 0.5em;
+}
+
+.input:focus {
+  outline: 2px solid var(--clr-img-bg);
+}
+
+.show {
+  border-color: var(--clr-error);
+}
+
+.show:focus {
+  outline: 2px solid var(--clr-error);
+}
+
+.input::placeholder {
+  color: var(--clr-img-bg);
+}
+
+.show::placeholder {
+  color: var(--clr-secondary);
+}
+
+.error-message {
+  font-size: 0.55em;
+  text-align: center;
+  color: var(--clr-error);
+  font-weight: 600;
+  margin-bottom: 1.5em;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.btn {
+  width: 100%;
+  background: var(--clr-btn-bg);
+  color: var(--clr-main-bg);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+.img-container {
+  max-width: 600px;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+
+.dashboard-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 1.5em;
+}
+
+.icon-container {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-img-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8em;
+  transition: background 0.2s linear;
+  cursor: pointer;
+}
+
+.icon-container:hover {
+  background: var(--clr-btn-bg);
+}
+
+.icon-container:hover .fab {
+  color: var(--clr-main-bg);
+}
+
+.fab {
+  color: var(--clr-btn-bg);
+}
+
+.copyright {
+  color: var(--clr-primary);
+  font-size: 0.6em;
+}
+
+.attribution {
+  margin-top: 1em;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 500px) {
+  .wrapper {
+    justify-content: center;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .logo {
+    width: 5em;
+  }
+
+  .title {
+    font-size: 1.9em;
+    margin-bottom: 0.2em;
+  }
+
+  .text {
+    font-size: 1.1em;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    gap: 1em;
+  }
+
+  .error-message.show {
+    display: block;
+    position: absolute;
+    top: 110%;
+    left: 6%;
+  }
+
+  .btn {
+    width: 310px;
+    margin-top: 0;
+  }
+
+  .img-container {
+    margin-bottom: 2em;
+  }
+
+  .input {
+    margin-bottom: 0;
+  }
+
+  .social-icons {
+    margin-bottom: 2em;
+  }
+}
+
+@media only screen and (min-width: 633px) {
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 0.2em;
+  }
+}
